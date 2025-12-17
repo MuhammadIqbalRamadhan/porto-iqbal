@@ -1,0 +1,78 @@
+MUHAMMAD IQBAL RAMADHAN
+Full Stack Software Engineer
+Depok, Indonesia | +62 857-1011-6328 | muh.iqbal6328@gmail.com | linkedin.com/in/muhiqbal6328
+SUMMARY
+Experienced Full Stack Software Engineer with over 4 years of expertise, currently delivering scalable solutions at PT Nuon Digital Indonesia (Telkom Group). Proven track record in optimizing high-traffic API middleware handling 300,000+ daily transactions and pioneering Generative AI integrations. Specialized in implementing cost-efficient AI architectures achieving 30% operational cost reduction through caching and rate-limiting strategies while managing complex data migrations and system documentation.
+EDUCATION
+Asia Cyber University (GPA : 3,84)	Jakarta, Indonesia
+Bachelor’s Degree in Information System	April 2024 – Present
+Taruna Bhakti Vocational High School	Depok, Indonesia
+Software Engineering	July 2019 – August 2022
+WORK EXPERIENCED	
+
+PT. Nuon Digital Indonesia (Telkom Group)	Jakarta, Indonesia
+Software Engineer		July 2025 – Present
+●	Develop and maintain high-traffic middleware APIs bridging Indihome with OTT partners, ensuring stability for over 300,000 daily transactions.
+●	Build and optimize internal Knowledge Management Systems integrated with Generative AI (Gemini) to enhance operational efficiency.
+●	Develop automated Cron jobs to execute seamless data migration from legacy systems to new architecture.
+●	handle mass activation promo events to ensure system stability under heavy load.
+●	Create API Documentation.
+
+PT. Phiraka Sinergi Indonesia	Jakarta, Indonesia
+Fullstack Developer	September 2022 – July 2025
+●	Develop and maintain web, mobile, and desktop applications using PHP and JavaScript Framework, while optimizing application performance for responsiveness across various devices.
+●	Lead development teams on three projects, ensuring quality, efficiency, and timely delivery, while mentoring interns to enhance their technical skills.
+●	Conduct in-depth research on emerging technologies to support organizational needs and hold knowledge-sharing sessions to improve team skills.
+●	Implement various front-end components with jQuery to improve interactivity and user experience.
+●	Integrate mobile applications with backend APIs for real-time data synchronization and perform testing and debugging on Android devices to ensure app quality.
+●	Work closely with the design team to ensure responsive and user-friendly interface.
+●	Perform debugging and troubleshooting to ensure the application runs smoothly and bug-free.
+●	Manage database and perform query optimization to ensure optimal application performance.
+●	Managed deployment processes and collaborated with cross-functional and DevOps teams to ensure smooth integration, automate workflows, and minimize downtime and errors.
+●	Collaborate with teams using Agile methods to ensure applications meet high-quality standards before release.
+Achievement
+●	Achieved top KPI in 2025 by securing first place in team performance, demonstrating commitment and expertise in delivering projects on time and with high quality.
+
+
+
+
+
+PT. QUPRO Indonesia	Depok, Indonesia
+Freelance Web Developer	2021-2022
+●	Developed a donation tracking application to streamline the donation process for events using Laravel.
+●	Implemented a feature for admins to record donations efficiently, ensuring accurate data entry.
+●	Integrated WhatsApp notifications to inform donors upon successful donation entry, enhancing communication and engagement.
+●	Created comprehensive reports and financial dashboards for admins to monitor donation statistics and financial health.
+
+
+PT. Solusi Intek Indonesia	Jakarta, Indonesia
+Intern FullStack Developer	2021
+●	Developed a donation tracking application to streamline the donation process for events using Laravel.
+●	Created and maintained a booking management system website, enhancing the efficiency of booking processes.
+●	Deployed applications to Ubuntu servers using Apache and Nginx, as well as managing hosting environments with cPanel and Virtualmin.
+
+SKILLS
+Language: JavaScript, JavaScript (ES6+), TypeScript, PHP, Python (explore)
+Front End: NextJs, ReactJs, Redux, React Native, CSS, Bootstrap, TailwindCSS, Blade, Twig, jQuery, Figma, NodeJs, NPM.
+Back End: Laravel, CodeIgniter, Phalcon, ExpressJs, NodeJS, Python, PostgreSQL, MySQL, SQL Server, RestAPI, Propel ORM, Apache, Nginx.
+AI & Data: Google Gemini API, RAG (Retrieval-Augmented Generation), Vector Database, Redis (Caching), AI Cost Analysis.
+PROJECTS
+TVV (High-Traffic API Middleware)			July 2025 – Present A high-performance middleware API designed to bridge Indihome and various OTT partners. This system is critical for content purchasing and activation, successfully handling a load of over 300,000 transactions per day. Responsibilities include developing and maintaining the system, monitoring real-time transactions to ensure zero downtime, and managing high-concurrency events such as mass activation promos.
+Tech stack: CodeIgniter, Phalcon, PHP, MySQL.
+
+Knowledge Management System (GenAI Integrated)		     November 2025 – Present 
+An intelligent internal platform powered by Generative AI to streamline information access. Key features include "Chat with Gemini" using WebSockets for real-time interaction, Hybrid Search to improve RAG accuracy, and an AI-based tool for analyzing image-based PDF documents. The system implements a robust AI Caching System and Multi-window Rate Limiting (minute/hour/day), which successfully reduced API costs by approximately 30% while preventing abuse. It also features an AI Analytics dashboard to monitor token usage and operational costs.
+Tech stack: Next.js, Express.js, Google Gemini API, WebSocket, PosgreSQL, Vector Database.
+
+Human resources information system	September 2024 – March 2025 Application to support human resource management operations within the company. This application includes key modules such as Employee Management for employee data management, Organisation Management for structuring and mapping company hierarchy, Payroll for automating salary and tax calculations, Recruitment for handling the hiring process from selection to onboarding, and Training for managing employee training and development. This system enhances HR administration efficiency, ensures transparency, and supports data-driven decision-making.
+Tech stack: Codeigniter4, Propel ORM , jQuery, Javascript, Bootstrap, Twig, PostgreSQL.
+Room Management System (Kejaksaan Agung RI)	April 2024 - Agustus 2024 An application for the Attorney General's Office of the Republic of Indonesia designed to facilitate efficient room booking. This application features a 3D Room View, allowing users to visually check room availability, and a Random Booking Algorithm that ensures bookings comply with specific rules, such as preventing mixed-gender occupants on the same floor, prioritizing certain genders, and considering seniority or juniority. This system enhances room management efficiency, ensures compliance with internal policies, and provides a transparent and automated user experience.
+Tech stack: Codeigniter4, PropelORM, jQuery, Three JS, Javascipt,Bootstrap, Twig, PostgreSQL.
+Education and Training Information System	February 2024 - April 2024 Is an application available on both mobile and web platforms, designed to streamline the administration of education and training programs within an organization. This system facilitates training registration, scheduling, participant management, instructor assignments, and progress tracking. It also includes reporting and analytics features to evaluate training effectiveness.
+Tech stack: Codeigniter4, React Native, jQuery, Javascript, Bootstrap, PostgreSQL.
+Document Management System (kejaksaan Agung RI)	November 2023 - February 2024 Application used to digitize physical documents and simplify document management within an organization. This system allows users to store, search, and manage documents efficiently, and it is equipped with storage location visualization to provide a digital representation of where documents are stored.
+Tech stack: Laravel, React Native, Jquery, Javascript, Dynamsoft Webtwain, Bootstrap, Redis, PostgreSQL.
+Print Card Management System (Polri)	September 2023 – November 2023 Is a desktop application used by the Education and Training Institution of the Indonesian National Police to create training participant cards. This application is designed to streamline the card printing process efficiently, ensure data accuracy, and enhance the speed and precision of issuing participant identity cards. Tech stack: React Electron, Node JS, Codeigniter4, React Bootstrap, Evolis SDK, PostgreSQL.
+Fit to work	July 2023 - September 2023
+Is an application available on web and mobile platforms, designed to monitor workers' health. This application enables companies to conduct regular health check-ups, record health data, and analyze employees' conditions to ensure they are fit for work. With integrated health monitoring features, this application helps improve employee well-being, prevent health risks in the workplace, and support compliance with occupational safety standards.
+Tech stack: Codeigniter4, React Native, Jquery, Javascript, Bootstrap, SQL Serv

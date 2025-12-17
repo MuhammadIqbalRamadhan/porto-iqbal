@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Iqbal Ramadhan | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'SFMono-Regular', 'monospace'],
+          },
+          colors: {
+            night: '#030014',
+            neon: '#00f5d4',
+            violet: '#9b5de5',
+            cyber: '#f15bb5',
+            matrix: '#00ff41',
+            mist: '#a3b8cc',
+            electric: '#00bbf9',
+          },
+          boxShadow: {
+            glow: '0 0 60px rgba(0,245,212,0.4)',
+            'glow-violet': '0 0 60px rgba(155,93,229,0.4)',
+            'glow-cyber': '0 0 40px rgba(241,91,181,0.3)',
+            neon: '0 0 5px #00f5d4, 0 0 20px #00f5d4, 0 0 40px #00f5d4',
+          },
+          keyframes: {
+            float: { '0%,100%': { transform: 'translateY(0) rotateX(0)' }, '50%': { transform: 'translateY(-20px) rotateX(2deg)' } },
+            shimmer: { '0%': { transform: 'translateX(-100%)' }, '100%': { transform: 'translateX(100%)' } },
+            pulseSoft: { '0%,100%': { opacity: 0.4, transform: 'scale(1)' }, '50%': { opacity: 1, transform: 'scale(1.05)' } },
+            glitch: { '0%,100%': { transform: 'translate(0)' }, '20%': { transform: 'translate(-2px, 2px)' }, '40%': { transform: 'translate(-2px, -2px)' }, '60%': { transform: 'translate(2px, 2px)' }, '80%': { transform: 'translate(2px, -2px)' } },
+            scanline: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100vh)' } },
+            borderGlow: { '0%,100%': { borderColor: 'rgba(0,245,212,0.3)' }, '50%': { borderColor: 'rgba(155,93,229,0.6)' } },
+            textGlow: { '0%,100%': { textShadow: '0 0 10px #00f5d4, 0 0 20px #00f5d4' }, '50%': { textShadow: '0 0 20px #9b5de5, 0 0 40px #9b5de5' } },
+            rotate3d: { '0%': { transform: 'rotateY(0deg)' }, '100%': { transform: 'rotateY(360deg)' } },
+            pulse3d: { '0%,100%': { transform: 'scale3d(1,1,1)' }, '50%': { transform: 'scale3d(1.02,1.02,1.02)' } },
+            slideUp: { '0%': { transform: 'translateY(100px)', opacity: 0 }, '100%': { transform: 'translateY(0)', opacity: 1 } },
+            fadeInScale: { '0%': { transform: 'scale(0.9)', opacity: 0 }, '100%': { transform: 'scale(1)', opacity: 1 } },
+            typewriter: { '0%': { width: '0' }, '100%': { width: '100%' } },
+            blink: { '0%,100%': { opacity: 1 }, '50%': { opacity: 0 } },
+            morphBg: { '0%,100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' }, '50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' } },
+            orbitSlow: { '0%': { transform: 'rotate(0deg) translateX(150px) rotate(0deg)' }, '100%': { transform: 'rotate(360deg) translateX(150px) rotate(-360deg)' } },
+            orbitFast: { '0%': { transform: 'rotate(0deg) translateX(100px) rotate(0deg)' }, '100%': { transform: 'rotate(-360deg) translateX(100px) rotate(360deg)' } },
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            shimmer: 'shimmer 2s linear infinite',
+            pulseSoft: 'pulseSoft 3s ease-in-out infinite',
+            glitch: 'glitch 0.3s ease-in-out infinite',
+            scanline: 'scanline 8s linear infinite',
+            borderGlow: 'borderGlow 3s ease-in-out infinite',
+            textGlow: 'textGlow 2s ease-in-out infinite',
+            rotate3d: 'rotate3d 20s linear infinite',
+            pulse3d: 'pulse3d 4s ease-in-out infinite',
+            slideUp: 'slideUp 0.8s ease-out forwards',
+            fadeInScale: 'fadeInScale 0.6s ease-out forwards',
+            typewriter: 'typewriter 3s steps(40) forwards',
+            blink: 'blink 1s step-end infinite',
+            morphBg: 'morphBg 8s ease-in-out infinite',
+            orbitSlow: 'orbitSlow 25s linear infinite',
+            orbitFast: 'orbitFast 15s linear infinite',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <!-- html2pdf library for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-night text-slate-100 min-h-screen overflow-x-hidden font-sans">
+  <!-- AI Futuristic Background -->
+  <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(155,93,229,0.15),transparent_50%),radial-gradient(ellipse_at_bottom,rgba(0,245,212,0.1),transparent_50%),radial-gradient(circle_at_20%_80%,rgba(241,91,181,0.08),transparent_40%),#030014]"></div>
+    <div class="gridlines absolute inset-0"></div>
+    <div class="beam-left"></div>
+    <div class="beam-right"></div>
+    <!-- Scanline Effect -->
+    <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,245,212,0.03)_2px,rgba(0,245,212,0.03)_4px)] animate-scanline opacity-30"></div>
+    <!-- Neural Network Particles -->
+    <div class="neural-particles"></div>
+    <!-- Floating Orbs -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-violet/20 rounded-full blur-[120px] animate-morphBg"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-neon/15 rounded-full blur-[100px] animate-morphBg" style="animation-delay: -4s"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-cyber/10 rounded-full blur-[80px] animate-pulseSoft"></div>
+    <!-- Orbiting Elements -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div class="w-4 h-4 bg-neon rounded-full shadow-glow animate-orbitSlow"></div>
+    </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div class="w-3 h-3 bg-violet rounded-full shadow-glow-violet animate-orbitFast"></div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-20 backdrop-blur-2xl bg-night/80 border-b border-neon/20 animate-borderGlow">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3 group" data-reveal>
+        <div class="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-neon via-electric to-violet text-night font-mono font-black grid place-items-center shadow-glow group-hover:animate-pulse3d transition-all duration-500">
+          <span class="text-xl">IQ</span>
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-neon/50 to-violet/50 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+        <div class="leading-tight">
+          <div class="text-neon/80 text-xs font-mono tracking-[0.25em] animate-textGlow">⚡ Full Stack Software Engineer</div>
+          <div class="text-lg font-bold bg-gradient-to-r from-white via-neon to-violet bg-clip-text text-transparent">Muhammad Iqbal Ramadhan</div>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-1 text-sm" data-reveal>
+        <a class="nav-link px-4 py-2 rounded-xl text-mist hover:text-neon hover:bg-neon/10 hover:shadow-glow transition-all duration-300 relative overflow-hidden group" href="#about">
+          <span class="relative z-10">About</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+        </a>
+        <a class="nav-link px-4 py-2 rounded-xl text-mist hover:text-neon hover:bg-neon/10 hover:shadow-glow transition-all duration-300 relative overflow-hidden group" href="#experience">
+          <span class="relative z-10">Experience</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+        </a>
+        <a class="nav-link px-4 py-2 rounded-xl text-mist hover:text-neon hover:bg-neon/10 hover:shadow-glow transition-all duration-300 relative overflow-hidden group" href="#projects">
+          <span class="relative z-10">Projects</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+        </a>
+        <a class="nav-link px-4 py-2 rounded-xl text-mist hover:text-neon hover:bg-neon/10 hover:shadow-glow transition-all duration-300 relative overflow-hidden group" href="#skills">
+          <span class="relative z-10">Skills</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+        </a>
+        <a class="nav-link px-4 py-2 rounded-xl text-mist hover:text-neon hover:bg-neon/10 hover:shadow-glow transition-all duration-300 relative overflow-hidden group" href="#contact">
+          <span class="relative z-10">Contact</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+        </a>
+      </div>
+      <div class="hidden sm:flex items-center gap-3" data-reveal>
+        <button onclick="downloadPDF()" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold rounded-xl border-2 border-neon/50 text-neon hover:bg-neon/10 hover:border-neon hover:shadow-glow transition-all duration-300 relative overflow-hidden group">
+          <span class="relative z-10 flex items-center gap-2">📄 Download CV</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+        </button>
+        <a class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold rounded-xl bg-gradient-to-r from-neon via-electric to-violet text-night shadow-glow hover:shadow-neon hover:scale-105 transition-all duration-300 relative overflow-hidden group" href="mailto:muh.iqbal6328@gmail.com">
+          <span class="relative z-10 flex items-center gap-2">🚀 Hire Me</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pb-24">
+    <section id="top" class="pt-10 lg:pt-20">
+      <div class="relative isolate overflow-hidden rounded-[2.5rem] border border-neon/20 bg-gradient-to-br from-night/90 via-violet/5 to-night/90 backdrop-blur-2xl shadow-2xl animate-borderGlow" data-reveal>
+        <!-- Holographic Overlay -->
+        <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,245,212,0.03)_50%,transparent_75%)] bg-[length:250%_250%] animate-shimmer"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-neon/5 via-transparent to-violet/5"></div>
+        <!-- Animated Orbs -->
+        <div class="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-neon/20 blur-[100px] animate-morphBg"></div>
+        <div class="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-violet/25 blur-[120px] animate-morphBg" style="animation-delay: -4s"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-cyber/10 blur-[150px] animate-pulseSoft"></div>
+        <!-- Circuit Lines -->
+        <div class="circuit-pattern absolute inset-0 opacity-20"></div>
+        <div class="grid lg:grid-cols-[1.15fr,0.85fr] gap-10 lg:gap-16 relative p-8 sm:p-12">
+          <div class="flex flex-col gap-6" data-reveal>
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-neon/30 bg-neon/10 text-neon font-bold shadow-glow backdrop-blur-sm w-fit animate-fadeInScale">
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-neon"></span>
+              </span>
+              <span class="typing-effect">🤖 AI Engineer · Full Stack · Scalable Systems</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <span class="block text-white/90">I'm Iqbal,</span>
+              <span class="block bg-gradient-to-r from-neon via-electric to-violet bg-clip-text text-transparent animate-textGlow">Full Stack Software Engineer</span>
+              <span class="block text-white/80 text-3xl sm:text-4xl lg:text-5xl mt-2">building <span class="text-cyber">high-speed middleware</span> and AI-first products.</span>
+            </h1>
+            <p class="text-mist text-lg max-w-2xl leading-relaxed">Experienced Full Stack Software Engineer with 4+ years delivering end-to-end solutions. I build <span class="text-neon font-semibold">API middleware that handles 300K+ daily transactions</span>, lead <span class="text-violet font-semibold">Generative AI</span> integrations, and design caching plus rate-limiting architectures that cut operational costs by <span class="text-cyber font-semibold">~30%</span>.</p>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div class="metric-card group relative rounded-2xl border border-neon/30 bg-gradient-to-br from-neon/10 to-transparent p-5 shadow-glow hover:shadow-neon transition-all duration-500 hover:scale-105 hover:-translate-y-1 overflow-hidden" data-reveal>
+                <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/20 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div class="relative">
+                  <div class="text-3xl font-black text-neon animate-textGlow font-mono">300K+</div>
+                  <div class="text-sm text-mist mt-1">⚡ API transactions per day</div>
+                </div>
+              </div>
+              <div class="metric-card group relative rounded-2xl border border-violet/30 bg-gradient-to-br from-violet/10 to-transparent p-5 shadow-glow-violet hover:shadow-[0_0_40px_rgba(155,93,229,0.5)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 overflow-hidden" data-reveal>
+                <div class="absolute inset-0 bg-gradient-to-r from-violet/0 via-violet/20 to-violet/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div class="relative">
+                  <div class="text-3xl font-black text-violet font-mono">30%</div>
+                  <div class="text-sm text-mist mt-1">🧠 AI cost reduction</div>
+                </div>
+              </div>
+              <div class="metric-card group relative rounded-2xl border border-cyber/30 bg-gradient-to-br from-cyber/10 to-transparent p-5 shadow-glow-cyber hover:shadow-[0_0_40px_rgba(241,91,181,0.5)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 overflow-hidden" data-reveal>
+                <div class="absolute inset-0 bg-gradient-to-r from-cyber/0 via-cyber/20 to-cyber/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div class="relative">
+                  <div class="text-3xl font-black text-cyber font-mono">4+ yrs</div>
+                  <div class="text-sm text-mist mt-1">🚀 engineering experience</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a class="cta-primary group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-neon via-electric to-violet text-night font-bold text-lg shadow-glow hover:shadow-neon hover:scale-105 transition-all duration-300 overflow-hidden" href="mailto:muh.iqbal6328@gmail.com">
+                <span class="relative z-10 flex items-center gap-2">📧 Contact Me</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/40 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              </a>
+              <a class="cta-secondary group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl border-2 border-neon/40 text-neon font-bold text-lg hover:bg-neon/10 hover:border-neon hover:shadow-glow transition-all duration-300 overflow-hidden" href="https://linkedin.com/in/muhiqbal6328" target="_blank" rel="noreferrer">
+                <span class="relative z-10">💼 LinkedIn</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-neon/0 via-neon/10 to-neon/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+              </a>
+              <button onclick="downloadPDF()" class="cta-secondary group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl border-2 border-violet/40 text-violet font-bold text-lg hover:bg-violet/10 hover:border-violet hover:shadow-glow-violet transition-all duration-300 overflow-hidden no-print">
+                <span class="relative z-10">📄 Download CV</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-violet/0 via-violet/10 to-violet/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+              </button>
+            </div>
+            <div class="flex flex-wrap gap-2 text-sm text-mist">
+              <span class="px-3 py-2 rounded-full border border-white/10">Depok, Indonesia</span>
+              <span class="px-3 py-2 rounded-full border border-white/10">+62 857-1011-6328</span>
+              <span class="px-3 py-2 rounded-full border border-white/10">muh.iqbal6328@gmail.com</span>
+            </div>
+          </div>
+          <div class="relative" data-reveal>
+            <!-- Outer Glow -->
+            <div class="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-neon/30 via-violet/20 to-cyber/20 blur-3xl animate-pulseSoft"></div>
+            <!-- Holographic Frame -->
+            <div class="relative rounded-[32px] p-1 bg-gradient-to-br from-neon via-violet to-cyber animate-borderGlow">
+              <div class="relative rounded-[28px] bg-night/95 backdrop-blur-2xl overflow-hidden shadow-2xl">
+                <!-- Inner Glow Effects -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-neon/10 via-transparent to-violet/10"></div>
+                <div class="absolute -left-32 top-1/3 h-80 w-80 bg-neon/15 blur-[100px] animate-morphBg"></div>
+                <div class="absolute -right-24 top-0 h-64 w-64 bg-violet/20 blur-[90px] animate-morphBg" style="animation-delay: -3s"></div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 h-48 w-full bg-cyber/10 blur-[80px] animate-pulseSoft"></div>
+                <!-- Scan Lines -->
+                <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,245,212,0.02)_2px,rgba(0,245,212,0.02)_4px)] pointer-events-none"></div>
+                <!-- Status Badge -->
+                <div class="absolute right-4 top-4 z-20 flex items-center gap-2 px-4 py-2 rounded-xl bg-night/80 border border-neon/40 text-xs font-mono text-neon shadow-glow backdrop-blur-sm">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-neon"></span>
+                  </span>
+                  Available to build
+                </div>
+                <!-- AI Badge -->
+                <div class="absolute left-4 top-4 z-20 px-3 py-1.5 rounded-lg bg-violet/20 border border-violet/40 text-xs font-mono text-violet">
+                  🤖 AI-Powered
+                </div>
+                <!-- Photo -->
+                <img class="relative w-full h-full object-contain animate-float hover:scale-105 transition-transform duration-700" src="./hero.png" alt="Portrait of Muhammad Iqbal Ramadhan" />
+                <!-- Bottom Gradient -->
+                <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-night via-night/50 to-transparent"></div>
+              </div>
+            </div>
+            <!-- Corner Decorations -->
+            <div class="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-neon rounded-tl-lg"></div>
+            <div class="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-violet rounded-tr-lg"></div>
+            <div class="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-cyber rounded-bl-lg"></div>
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-neon rounded-br-lg"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-lab" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">AI LAB</span>
+        <h2 class="text-2xl font-semibold">AI Engineering Playground</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4" data-reveal>
+        <div class="card glass space-y-4">
+          <div>
+            <div class="text-sm font-semibold text-neon">Gemini Cost Guardrail</div>
+            <p class="text-mist text-sm">Simulate daily GenAI cost with cache hit rate. Shows potential savings when cache prevents re-queries.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm text-mist">
+            <label class="space-y-1">
+              <span>Tokens per request</span>
+              <input id="ai-tokens" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="1200" min="1" />
+            </label>
+            <label class="space-y-1">
+              <span>Requests / minute</span>
+              <input id="ai-rpm" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="8" min="1" />
+            </label>
+            <label class="space-y-1">
+              <span>Price per 1K tokens ($)</span>
+              <input id="ai-price" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="0.002" step="0.001" min="0" />
+            </label>
+            <label class="space-y-1">
+              <span>Cache hit rate (%)</span>
+              <input id="ai-hit" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="35" min="0" max="100" />
+            </label>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl border border-neon/30 bg-night/60 p-3">
+              <div class="text-mist">Est. daily cost</div>
+              <div id="ai-cost" class="text-neon text-xl font-bold">$0.00</div>
+            </div>
+            <div class="rounded-xl border border-cyber/30 bg-night/60 p-3">
+              <div class="text-mist">Saved by cache</div>
+              <div id="ai-saved" class="text-cyber text-xl font-bold">$0.00</div>
+            </div>
+          </div>
+          <p class="text-xs text-mist">Assumes uniform load over 24h. Adjust hit rate to see impact; pairs with rate limiting + caching practice mentioned in the projects.</p>
+        </div>
+
+        <div class="card glass space-y-4">
+          <div>
+            <div class="text-sm font-semibold text-neon">Rate Limit Planner</div>
+            <p class="text-mist text-sm">Plan safe per-minute limits for chat/API while keeping latency predictable.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm text-mist">
+            <label class="space-y-1">
+              <span>Peak requests / minute</span>
+              <input id="rl-peak" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="120" min="1" />
+            </label>
+            <label class="space-y-1">
+              <span>Safety margin (%)</span>
+              <input id="rl-margin" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="25" min="0" />
+            </label>
+            <label class="space-y-1">
+              <span>Bucket window (seconds)</span>
+              <input id="rl-window" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="60" min="1" />
+            </label>
+            <label class="space-y-1">
+              <span>Allowed bursts (x)</span>
+              <input id="rl-burst" type="number" class="w-full rounded-xl bg-night/60 border border-neon/30 px-3 py-2" value="2" min="1" />
+            </label>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="rounded-xl border border-neon/30 bg-night/60 p-3">
+              <div class="text-mist">Steady limit / min</div>
+              <div id="rl-steady" class="text-neon text-xl font-bold">0</div>
+            </div>
+            <div class="rounded-xl border border-cyber/30 bg-night/60 p-3">
+              <div class="text-mist">Burst cap / window</div>
+              <div id="rl-cap" class="text-cyber text-xl font-bold">0</div>
+            </div>
+          </div>
+          <p class="text-xs text-mist">Use outputs to configure per-minute + burst limits (e.g., NGINX/Envoy/Express middleware) aligned with the middleware and GenAI projects above.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">ABOUT</span>
+        <h2 class="text-2xl font-semibold">About Me</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4" data-reveal>
+        <div class="card glass">Full Stack Software Engineer at PT Nuon Digital Indonesia (Telkom Group). I focus on high-traffic middleware, Generative AI platforms, and system documentation - keeping services stable during high-load events, leading cross-team deliverables, and ensuring operational costs stay efficient.</div>
+        <div class="card glass space-y-3">
+          <div class="text-mist text-sm">Specialties</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">High-traffic API middleware</span>
+            <span class="chip">Generative AI & RAG</span>
+            <span class="chip">Caching & Rate limiting</span>
+            <span class="chip">Data migration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">EXPERIENCE</span>
+        <h2 class="text-2xl font-semibold">Work Experience</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4" data-reveal>
+        <div class="card glass">
+          <div class="flex flex-col gap-1 mb-2">
+            <h3 class="text-lg font-semibold">Software Engineer · PT Nuon Digital Indonesia (Telkom Group)</h3>
+            <span class="text-mist text-sm">Jul 2025 – Present · Jakarta, Indonesia</span>
+          </div>
+          <ul class="list-disc list-inside text-mist space-y-1">
+            <li>Develop and maintain high-traffic middleware APIs connecting Indihome with OTT partners, handling 300K+ daily transactions.</li>
+            <li>Build AI-powered Knowledge Management Systems with Gemini (WebSocket chat, hybrid search).</li>
+            <li>Automate cron jobs for seamless data migration from legacy systems to new architecture.</li>
+            <li>Manage mass activation promo events with strict rate limiting and real-time monitoring.</li>
+            <li>Create API documentation and operational playbooks.</li>
+          </ul>
+        </div>
+        <div class="card glass">
+          <div class="flex flex-col gap-1 mb-2">
+            <h3 class="text-lg font-semibold">Fullstack Developer · PT Phiraka Sinergi Indonesia</h3>
+            <span class="text-mist text-sm">Sep 2022 – Jul 2025 · Jakarta, Indonesia</span>
+          </div>
+          <ul class="list-disc list-inside text-mist space-y-1">
+            <li>Developed and maintained web, mobile, and desktop apps using PHP/JS frameworks; optimized performance across devices.</li>
+            <li>Led development teams on three projects and mentored interns to improve delivery quality and timeliness.</li>
+            <li>Integrated mobile apps with backend APIs for real-time data sync; tested and debugged on Android devices.</li>
+            <li>Automated deployments and collaborated with DevOps to reduce downtime and errors.</li>
+            <li>Achieved top KPI in 2025 (ranked #1) for team performance.</li>
+          </ul>
+        </div>
+        <div class="card glass">
+          <div class="flex flex-col gap-1 mb-2">
+            <h3 class="text-lg font-semibold">Freelance Web Developer · PT QUPRO Indonesia</h3>
+            <span class="text-mist text-sm">2021 – 2022 · Depok, Indonesia</span>
+          </div>
+          <ul class="list-disc list-inside text-mist space-y-1">
+            <li>Developed a donation tracking application with Laravel to streamline event donations.</li>
+            <li>Integrated WhatsApp notifications to confirm donors after successful entries.</li>
+            <li>Created financial dashboards and centralized reports for admins.</li>
+          </ul>
+        </div>
+        <div class="card glass">
+          <div class="flex flex-col gap-1 mb-2">
+            <h3 class="text-lg font-semibold">Intern Fullstack · PT Solusi Intek Indonesia</h3>
+            <span class="text-mist text-sm">2021 · Jakarta, Indonesia</span>
+          </div>
+          <ul class="list-disc list-inside text-mist space-y-1">
+            <li>Developed a donation tracking application with Laravel and a booking management system website.</li>
+            <li>Deployed apps to Ubuntu servers using Apache/Nginx and managed hosting with cPanel/Virtualmin.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">PROJECTS</span>
+        <h2 class="text-2xl font-semibold">Featured Projects</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4" data-reveal>
+        <div class="card glass project-card cursor-pointer" data-project="tvv">
+          <h3 class="text-lg font-semibold">TVV · High-Traffic API Middleware</h3>
+          <div class="text-mist text-sm">Jul 2025 – Present · CodeIgniter, Phalcon, PHP, MySQL</div>
+          <p class="text-mist mt-2">High-performance middleware bridging Indihome and OTT partners for content purchase and activation; processes 300K+ transactions/day with real-time monitoring.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Dashboard of high-traffic API middleware" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="kms">
+          <h3 class="text-lg font-semibold">Knowledge Management System (GenAI)</h3>
+          <div class="text-mist text-sm">Nov 2025 – Present · Next.js, Express.js, Gemini, Vector DB</div>
+          <p class="text-mist mt-2">Gemini-powered internal platform with WebSocket chat, hybrid search RAG, AI caching, multi-window rate limiting, and AI analytics that reduced API costs by ~30%.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="AI knowledge system interface" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="hris">
+          <h3 class="text-lg font-semibold">Human Resources Information System</h3>
+          <div class="text-mist text-sm">Sep 2024 – Mar 2025 · CodeIgniter4, Propel ORM, PostgreSQL</div>
+          <p class="text-mist mt-2">HR modules covering Employee, Organisation, Payroll, Recruitment, and Training to drive operational transparency and efficiency.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80" alt="HRIS dashboard overview" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="room">
+          <h3 class="text-lg font-semibold">Room Management System (Attorney General's Office)</h3>
+          <div class="text-mist text-sm">Apr 2024 – Aug 2024 · CodeIgniter4, Three.js, PostgreSQL</div>
+          <p class="text-mist mt-2">Room booking with 3D Room View and a randomized booking algorithm that respects gender rules and seniority.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="3D room management interface" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="education">
+          <h3 class="text-lg font-semibold">Education & Training Information System</h3>
+          <div class="text-mist text-sm">Feb 2024 – Apr 2024 · CodeIgniter4, React Native, PostgreSQL</div>
+          <p class="text-mist mt-2">Web and mobile platform for training registration, scheduling, participant and instructor management, plus reporting.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Training and education dashboard" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="dms">
+          <h3 class="text-lg font-semibold">Document Management System (Attorney General's Office)</h3>
+          <div class="text-mist text-sm">Nov 2023 – Feb 2024 · Laravel, React Native, Redis, PostgreSQL</div>
+          <p class="text-mist mt-2">Digitizes physical documents with fast search and storage location visualization.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Document management interface" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="printcard">
+          <h3 class="text-lg font-semibold">Print Card Management System (Indonesian National Police)</h3>
+          <div class="text-mist text-sm">Sep 2023 – Nov 2023 · React Electron, CodeIgniter4, Evolis SDK</div>
+          <p class="text-mist mt-2">Desktop app for training participant card printing with accurate, fast data flows.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Desktop card printing workflow" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+        <div class="card glass project-card cursor-pointer" data-project="fit">
+          <h3 class="text-lg font-semibold">Fit to Work</h3>
+          <div class="text-mist text-sm">Jul 2023 – Sep 2023 · CodeIgniter4, React Native, SQL Server</div>
+          <p class="text-mist mt-2">Web and mobile health monitoring app enabling routine checkups, logging, and analysis for worker readiness.</p>
+          <div class="mt-3 overflow-hidden rounded-xl border border-neon/20">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="Health monitoring app interface" class="w-full h-full object-cover aspect-video" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-night/80 backdrop-blur-xl p-4">
+      <div class="relative w-full max-w-3xl rounded-2xl border border-neon/30 bg-night/95 shadow-2xl">
+        <button id="modal-close" class="absolute right-3 top-3 text-neon hover:text-white text-xl" aria-label="Close">×</button>
+        <div class="p-6 sm:p-8 space-y-4">
+          <div class="text-xs font-mono tracking-[0.3em] text-neon">PROJECT DETAIL</div>
+          <div class="flex flex-wrap gap-2 text-mist text-sm" id="modal-meta"></div>
+          <h3 class="text-2xl font-semibold" id="modal-title"></h3>
+          <p class="text-mist" id="modal-desc"></p>
+          <div class="space-y-2">
+            <div class="text-sm font-semibold text-neon">Highlights</div>
+            <ul class="list-disc list-inside text-mist space-y-1" id="modal-highlights"></ul>
+          </div>
+          <div class="space-y-2">
+            <div class="text-sm font-semibold text-neon">Tech Stack</div>
+            <div class="flex flex-wrap gap-2 text-xs" id="modal-stack"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="skills" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">SKILLS</span>
+        <h2 class="text-2xl font-semibold">Technical Skills</h2>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-4" data-reveal>
+        <div class="card glass space-y-3">
+          <h3 class="text-lg font-semibold">Languages & Backend</h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip">JavaScript (ES6+)</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Python (exploring)</span>
+            <span class="chip">Express.js</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Laravel</span>
+            <span class="chip">CodeIgniter</span>
+            <span class="chip">Phalcon</span>
+            <span class="chip">Propel ORM</span>
+            <span class="chip">REST API</span>
+          </div>
+        </div>
+        <div class="card glass space-y-3">
+          <h3 class="text-lg font-semibold">Front End</h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip">Next.js</span>
+            <span class="chip">React.js</span>
+            <span class="chip">Redux</span>
+            <span class="chip">React Native</span>
+            <span class="chip">TailwindCSS</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">Twig</span>
+            <span class="chip">Blade</span>
+            <span class="chip">jQuery</span>
+            <span class="chip">Figma</span>
+          </div>
+        </div>
+        <div class="card glass space-y-3">
+          <h3 class="text-lg font-semibold">AI & Data</h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip">Google Gemini API</span>
+            <span class="chip">RAG & Hybrid Search</span>
+            <span class="chip">Vector Database</span>
+            <span class="chip">Redis (Caching)</span>
+            <span class="chip">AI Cost Analysis</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">SQL Server</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">EDUCATION</span>
+        <h2 class="text-2xl font-semibold">Education</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4" data-reveal>
+        <div class="card glass">
+          <h3 class="text-lg font-semibold">Asia Cyber University</h3>
+          <div class="text-mist text-sm">Bachelor's Degree in Information System · Apr 2024 – Present · GPA 3.84</div>
+          <div class="text-mist text-sm">Jakarta, Indonesia</div>
+        </div>
+        <div class="card glass">
+          <h3 class="text-lg font-semibold">SMK Taruna Bhakti</h3>
+          <div class="text-mist text-sm">Software Engineering · Jul 2019 – Aug 2022</div>
+          <div class="text-mist text-sm">Depok, Indonesia</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mt-16 space-y-6">
+      <div class="flex items-center gap-3" data-reveal>
+        <span class="text-xs font-mono tracking-[0.28em] text-neon">CONTACT</span>
+        <h2 class="text-2xl font-semibold">Build something together?</h2>
+      </div>
+      <div class="grid md:grid-cols-[1.1fr,0.9fr] gap-4" data-reveal>
+        <div class="card glass space-y-2 text-mist">
+          <div><strong>Location:</strong> Depok, Indonesia</div>
+          <div><strong>Phone:</strong> +62 857-1011-6328</div>
+          <div><strong>Email:</strong> <a class="text-neon" href="mailto:muh.iqbal6328@gmail.com">muh.iqbal6328@gmail.com</a></div>
+          <div><strong>LinkedIn:</strong> <a class="text-neon" href="https://linkedin.com/in/muhiqbal6328" target="_blank" rel="noreferrer">linkedin.com/in/muhiqbal6328</a></div>
+        </div>
+        <div class="card glass border-neon/40 shadow-glow">
+          <div class="text-lg font-semibold mb-3">Open to discuss new ideas and engineering collaborations.</div>
+          <div class="flex flex-wrap gap-3">
+            <a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-neon to-violet text-night font-semibold shadow-glow hover:scale-[1.01] transition" href="mailto:muh.iqbal6328@gmail.com">Send Email</a>
+            <a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 text-slate-50 hover:border-neon/50 hover:text-neon transition" href="#top">Back to top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 text-center py-12 border-t border-neon/20 bg-night/80 backdrop-blur-2xl">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-neon to-violet text-night font-mono font-bold grid place-items-center shadow-glow text-sm">IQ</div>
+          <span class="text-lg font-bold bg-gradient-to-r from-neon to-violet bg-clip-text text-transparent">Muhammad Iqbal Ramadhan</span>
+        </div>
+        <p class="text-mist text-sm">🤖 Built with <span class="text-neon">AI-first</span> mindset · Full Stack Software Engineer · 2025</p>
+        <div class="flex gap-4 text-mist text-xs font-mono">
+          <span class="px-3 py-1 rounded-full border border-neon/20 hover:border-neon/50 hover:text-neon transition-colors">Next.js</span>
+          <span class="px-3 py-1 rounded-full border border-violet/20 hover:border-violet/50 hover:text-violet transition-colors">TailwindCSS</span>
+          <span class="px-3 py-1 rounded-full border border-cyber/20 hover:border-cyber/50 hover:text-cyber transition-colors">AI/ML</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
